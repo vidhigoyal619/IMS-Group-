@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IMS Pulse is now live</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="title">
+
+    <div>
+      <span class="badge">Reminder</span>
+      <h1 id="title">IMS Pulse is now live</h1>
+      <p>Everyone can now access IMS Pulse through the link below. Please note the changes to the older portals.</p>
+    </div>
+
+    <div class="link-box">
+      <div>
+        <span class="link-label">Access link</span>
+        <span class="link-text">https://your-ims-pulse-link.com</span>
+      </div>
+      <a class="btn-link" href="https://your-ims-pulse-link.com" target="_blank" rel="noopener">Open IMS Pulse</a>
+    </div>
+
+    <div>
+      <div class="section-title">What's changed</div>
+
+      <div class="status">
+        <span class="icon live" aria-hidden="true">&#10003;</span>
+        <div>
+          <span class="status-title">IMS Pulse: Live</span>
+          <span class="status-sub">Open to everyone through the link</span>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="icon off" aria-hidden="true">&#10005;</span>
+        <div>
+          <span class="status-title">CHS: Shut down</span>
+          <span class="status-sub">No longer available</span>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="icon off" aria-hidden="true">&#10005;</span>
+        <div>
+          <span class="status-title">RMS: Shut down</span>
+          <span class="status-sub">No longer available</span>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <label class="check-row" for="ack">
+        <input type="checkbox" id="ack">
+        <span>I understand that IMS Pulse is now live and that CHS and RMS have been shut down.</span>
+      </label>
+
+      <div class="footer">
+        <span class="helper" id="helper">Tick the checkbox to enable Submit.</span>
+        <button class="btn-submit" id="submit" type="button" disabled>Submit</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
