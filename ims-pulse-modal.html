@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IMS Pulse is now live</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #2A2F3A;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  }
+
+  .badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #EEF0FF;
+    color: #2B38A8;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+
+  h1 { margin: 12px 0; font-size: 24px; line-height: 32px; font-weight: 600; color: #111827; }
+  p  { margin: 0; font-size: 14px; line-height: 20px; color: #4B5563; }
+
+  .link-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    border: 1px solid #D5D9E2;
+    border-radius: 12px;
+    padding: 12px 12px 12px 16px;
+  }
+  .link-label { display: block; font-size: 12px; line-height: 16px; font-weight: 500; color: #545C69; }
+  .link-text  { display: block; font-size: 14px; line-height: 20px; color: #111827; word-break: break-all; }
+
+  .btn-link {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 1px solid #3B4BDB;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3B4BDB;
+    text-decoration: none;
+    background: #fff;
+  }
+  .btn-link:hover { background: #F4F5FF; }
+
+  .section-title {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #545C69;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .status { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .status:last-child { margin-bottom: 0; }
+  .icon {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .icon.live { background: #E3F6EA; color: #11643A; }
+  .icon.off  { background: #F1F2F5; color: #545C69; }
+  .status-title { display: block; font-size: 14px; line-height: 20px; font-weight: 600; color: #111827; }
+  .status-sub   { display: block; font-size: 12px; line-height: 16px; color: #545C69; }
+
+  hr { border: 0; height: 1px; background: #E5E7EB; margin: 0; }
+
+  .check-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-height: 44px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111827;
+  }
+  .check-row input { flex: none; width: 20px; height: 20px; margin: 0; accent-color: #3B4BDB; cursor: pointer; }
+
+  .footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 16px; }
+  .helper { font-size: 12px; line-height: 16px; color: #545C69; }
+
+  .btn-submit {
+    flex: none;
+    min-height: 44px;
+    min-width: 120px;
+    padding: 0 24px;
+    border: 0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    background: #3B4BDB;
+    color: #fff;
+    cursor: pointer;
+  }
+  .btn-submit:hover:not(:disabled) { background: #2B38A8; }
+  .btn-submit:disabled { background: #E5E7EB; color: #545C69; cursor: not-allowed; }
+
+  button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid #3B4BDB; outline-offset: 2px; }
+
+  @media (max-width: 480px) {
+    .modal { padding: 24px; }
+    .link-box, .footer { flex-direction: column; align-items: stretch; }
+    .btn-link { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="title">
+
+    <div>
+      <span class="badge">Reminder</span>
+      <h1 id="title">IMS Pulse is now live</h1>
+      <p>Everyone can now access IMS Pulse through the link below. Please note the changes to the older portals.</p>
+    </div>
+
+    <div class="link-box">
+      <div>
+        <span class="link-label">Access link</span>
+        <span class="link-text">https://your-ims-pulse-link.com</span>
+      </div>
+      <a class="btn-link" href="https://your-ims-pulse-link.com" target="_blank" rel="noopener">Open IMS Pulse</a>
+    </div>
+
+    <div>
+      <div class="section-title">What's changed</div>
+
+      <div class="status">
+        <span class="icon live" aria-hidden="true">&#10003;</span>
+        <div>
+          <span class="status-title">IMS Pulse: Live</span>
+          <span class="status-sub">Open to everyone through the link</span>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="icon off" aria-hidden="true">&#10005;</span>
+        <div>
+          <span class="status-title">CHS: Shut down</span>
+          <span class="status-sub">No longer available</span>
+        </div>
+      </div>
+
+      <div class="status">
+        <span class="icon off" aria-hidden="true">&#10005;</span>
+        <div>
+          <span class="status-title">RMS: Shut down</span>
+          <span class="status-sub">No longer available</span>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div>
+      <label class="check-row" for="ack">
+        <input type="checkbox" id="ack">
+        <span>I understand that IMS Pulse is now live and that CHS and RMS have been shut down.</span>
+      </label>
+
+      <div class="footer">
+        <span class="helper" id="helper">Tick the checkbox to enable Submit.</span>
+        <button class="btn-submit" id="submit" type="button" disabled>Submit</button>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  var ack = document.getElementById('ack');
+  var submit = document.getElementById('submit');
+  var helper = document.getElementById('helper');
+
+  ack.addEventListener('change', function () {
+    submit.disabled = !ack.checked;
+    helper.textContent = ack.checked ? 'You can submit now.' : 'Tick the checkbox to enable Submit.';
+  });
+
+  submit.addEventListener('click', function () {
+    // TODO: yahan apna submit logic daalo (API call / modal close)
+    alert('Submitted!');
+  });
+</script>
+
+</body>
+</html>
